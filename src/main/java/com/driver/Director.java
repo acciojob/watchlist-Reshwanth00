@@ -37,8 +37,3 @@ public class Director {
         this.numberOfMovies = numberOfMovies;
     }
 }
-
-
-
-//    Director.java Class - String name, int numberOfMovies, double imdbRating, no-args constructor, all-args
-//    constructor and getters-setters
