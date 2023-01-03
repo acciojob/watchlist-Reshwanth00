@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -29,13 +30,13 @@ public class MovieService {
     public Director getDirectorByName(String name){
         return movieRepository.directors.containsKey(name)?movieRepository.directors.get(name):null;
     }
-    public ArrayList<String> getMoviesByDirectorName(String name){
-        ArrayList<String> list = new ArrayList<>();
+    public List<String> getMoviesByDirectorName(String name){
+        List<String> list = new ArrayList<>();
         list.add(movieRepository.pair.get(name));
         return list;
     }
-    public ArrayList<String> findAllMovies(){
-        ArrayList<String> list = new ArrayList<>();
+    public List<String> findAllMovies(){
+        List<String> list = new ArrayList<>();
         for(Map.Entry<String,Movie> itr: movieRepository.movies.entrySet()){
             list.add(itr.getKey());
         }

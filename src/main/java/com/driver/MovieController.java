@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/movies")
@@ -41,12 +42,12 @@ public class MovieController {
         return new ResponseEntity<>(movieService.getDirectorByName(name),HttpStatus.ACCEPTED);
     }
     @GetMapping("/get-movies-by-director-name/{director}")
-    public ResponseEntity<ArrayList<String>> getMoviesByDirectorName(@PathParam("director") String name){
+    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathParam("director") String name){
         return new ResponseEntity<>(movieService.getMoviesByDirectorName(name),HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/get-all-movies")
-    public ResponseEntity<ArrayList<String>> findAllMovies(){
+    public ResponseEntity<List<String>> findAllMovies(){
         return new ResponseEntity<>(movieService.findAllMovies(),HttpStatus.ACCEPTED);
     }
     @DeleteMapping("/delete-director-by-name")
